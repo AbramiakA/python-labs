@@ -6,8 +6,8 @@ class Plane:
         self.__tank_capacity = tank_capacity
         self.__name = name
         self.__num_passengers = num_passengers
-        self.max_speed = max_speed
-        self.model = model
+        self.__max_speed = max_speed
+        self.__model = model
 
     def __del__(self):
         print(f'{self.__name} deleted successfully')
@@ -29,20 +29,19 @@ class Plane:
 
     def __str__(self):
         return (f'Name = {self.__name}, '
-                f'Model = {self.model}, '
-                f'Max speed = {self.max_speed}, '
+                f'Model = {self.__model}, '
+                f'Max speed = {self.__max_speed}, '
                 f'Tank capacity = {self.__tank_capacity}, '
                 f'Number of passengers = {self.__num_passengers}')
 
     def __repr__(self):
-        return f'Plane {self.__name}({self.model}): Tank capacity = {self.__tank_capacity}, Number of passengers = {self.__num_passengers}, Max speed = {self.max_speed}'
+        return f'Plane {self.__name}({self.__model}): Tank capacity = {self.__tank_capacity}, Number of passengers = {self.__num_passengers}, Max speed = {self.__max_speed}'
 
 def main():
 
     plane1 = Plane(405000, 'Мрія', 600, 850, 'Aн-255')
     plane2 = Plane(15, 'BambooPlane', 1, 160, 'A321CEO')
     plane3 = Plane(26000, 'Boeing', 200, 850, '737' )
-    plane4 = Plane()
 
     print(Plane.__doc__)
     print(Plane.get_info.__doc__)
